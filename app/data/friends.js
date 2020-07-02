@@ -1,16 +1,16 @@
 var friends = [{
         name: "Dost",
-        image: "../data/images/india.jpg",
+        image: "/images/india.jpg",
         scores: [2, 3, 4, 5, 3, 2, 1, 2, 3, 5],
     },
     {
         name: "Sadiq",
-        image: "../data/images/arab.jpg",
+        image: "/images/arab.jpg",
         scores: [2, 3, 4, 5, 3, 2, 1, 2, 3, 5],
     },
     {
         name: "Ami",
-        image: "../data/images/french.jpg",
+        image: "https://www.google.com/imgres?imgurl=https%3A%2F%2Ftinyjpg.com%2Fimages%2Fsocial%2Fwebsite.jpg&imgrefurl=https%3A%2F%2Ftinyjpg.com%2F&tbnid=ShQnriFk8AK93M&vet=12ahUKEwjwip27qa3qAhUOUFMKHbJiDO8QMygAegUIARDQAQ..i&docid=MxJRAkFr5rrEwM&w=1020&h=510&itg=1&q=jpg%20images&ved=2ahUKEwjwip27qa3qAhUOUFMKHbJiDO8QMygAegUIARDQAQ",
         scores: [1, 1, 2, 3, 1, 4, 5, 2, 3, 1],
     },
     {
@@ -20,12 +20,12 @@ var friends = [{
     },
     {
         name: "Mik",
-        image: "../data/images/albanian.jpg",
+        image: "/images/albanian.jpg",
         scores: [4, 4, 4, 5, 5, 5, 2, 5, 5, 5],
     },
     {
         name: "Droog",
-        image: "../data/images/russian.jpg",
+        image: "/images/russian.jpg",
         scores: [4, 4, 4, 5, 5, 5, 2, 5, 5, 5],
     },
 ];

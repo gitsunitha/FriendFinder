@@ -114,6 +114,21 @@ body {
     color: rgba(255, 255, 255, 0.5);
 }
 
+img {
+    padding: 5px;
+    /* Box-model */
+    width: 70%;
+    height: 70%;
+    /* Visual */
+    border: 0 none;
+    /* Misc */
+    opacity: 0.8;
+}
+
+input:invalid {
+    border: 2px red;
+}
+
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;

@@ -24,6 +24,7 @@ app.use(express.json());
 
 // to include css files
 app.use(express.static(__dirname + "/app/public"));
+//app.use(express.static(__dirname + "/app/data/images"));
 // ================================================================================
 // ROUTER
 // The below points our server to a series of "route" files.
