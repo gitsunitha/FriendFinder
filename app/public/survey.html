@@ -216,6 +216,26 @@
     </div>
 </div>
 
+<!-- Error Modal -->
+<div class="modal fade" id="errorModal" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title"><strong>Oops! We are missing some data</strong></h2>
+            </div>
+            <div class="modal-body">
+
+                <h5 id="errMessagesCreated"></h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">
     // validate the form inputs and find the best match
     $("#submit").on("click", function(event) {
@@ -236,20 +256,17 @@
         ];
         console.log(selectedValues);
         //validate 
-        var isValid = true
+        var isValidName = true
+        var isValidImg = true
         if ($("#name").val() === "") {
-            isValid = false;
-        } else {
-            form.classList.add('was-validated');
+            isValidName = false;
         }
 
         if ($("#photo").val() === "") {
-            isValid = false;
-        } else {
-            form.classList.add('was-validated');
+            isValidImg = false;
         }
 
-        if (isValid) {
+        if (isValidImg && isValidName) {
 
             var jsonReq = {
                 name: document.getElementById("name").value,
@@ -273,13 +290,25 @@
 
                 // If a match is not found...
                 else {
-                    //it should never ever reach this point
+                    //it should never ever reach this point because the most compatible match is always displayed
                     alert("There is a huge BUG if you  have reached here ");
                 }
             });
         } else {
-            //display a message
-            alert("Please enter name and/or image URL")
+            var errMessage = ""
+            if (!isValidName) {
+                errMessage = errMessage +
+                    "<li>Missing Name - Please enter what your new found friends should call you!</li>";
+            }
+            if (!isValidImg) {
+                errMessage = errMessage + "<li>Missing Image - A picture is worth a 1000 words!</li>"
+            }
+
+            $("#errMessagesCreated").html(errMessage)
+
+            // Show the modal with the best match
+            $("#errorModal").modal("toggle");
+
         }
     });
 </script>
